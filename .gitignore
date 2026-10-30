@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Environments and secrets
+.venv/
+venv/
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Data: never commit real or private event logs.
+# Only the clearly labelled synthetic sample in data/sample/ is tracked.
+data/raw/*
+!data/raw/.gitkeep
+data/processed/
+
+# Generated outputs are reproducible with `python -m healthcare_process_mining`.
+# The figures referenced by README.md are kept as portfolio artefacts.
+outputs/reports/
+outputs/figures/*
+!outputs/figures/original_frequency_dfg.png
+!outputs/figures/dfg_matrix.png
+!outputs/figures/top_variants.png
+!outputs/figures/transition_gaps.png
+
+# Local-only material (see README "Repository contents")
+_local_archive/
+*.pptx

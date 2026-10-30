@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "healthcare-process-mining"
+version = "1.0.0"
+description = "Process mining of a hospital discharge workflow with explicit data-quality validation."
+readme = "README.md"
+requires-python = ">=3.12"
+# Loose ranges for installing the package; requirements.txt pins the exact
+# versions that were tested.
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=2.0",
+    "matplotlib>=3.8",
+    "pm4py>=2.7.19",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ipykernel", "nbclient", "nbformat"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Lets `pytest` find the package without installing it first.
+pythonpath = ["src"]
+markers = ["pm4py: tests that call PM4Py (slower)"]
